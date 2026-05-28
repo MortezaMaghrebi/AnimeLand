@@ -1,0 +1,106 @@
+plugins {
+    alias(libs.plugins.android.application)
+}
+
+android {
+    namespace 'com.codestoon.animeland'
+    compileSdk {
+        version = release(36) {
+            minorApiLevel = 1
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.codestoon.animeland"
+        minSdk 24
+        targetSdk 36
+        versionCode 1
+        versionName "1.0"
+
+       // testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+
+    flavorDimensions "store"
+    productFlavors {
+        myket {
+            dimension "store"
+            //applicationId "com.codestoon.animeland.myket"  // پکیج متفاوت
+            versionNameSuffix "-myket"
+
+            // تنظیمات مایکت
+            def marketApplicationId = "ir.mservices.market"
+            def marketBindAddress = "ir.mservices.market.InAppBillingService.BIND"
+            manifestPlaceholders = [
+                    marketApplicationId: "${marketApplicationId}",
+                    marketBindAddress: "${marketBindAddress}",
+                    marketPermission: "${marketApplicationId}.BILLING"
+            ]
+            buildConfigField "String", "IAB_PUBLIC_KEY", "\"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC4McqwW6NWeczr0rf1B3IhWBT0fiDVN9T6RKGuyYJNOVzd2Sq6oJZPf8fz33mkYaAQ0W2fLl3SJeJBY5YLaT2EX/JINtm1FlpZGtjDcy9umbbYCF6+/XV8/PWgkCQBJF5UC5/xqyuV10q3Gmxvopax4pX+yCmHPGVbK4nvTWVaQwIDAQAB\""
+            buildConfigField "String", "STORE_NAME", "\"myket\""
+        }
+
+        bazaar {
+            dimension "store"
+            // applicationId "com.codestoon.animeland.bazaar"  // پکیج متفاوت
+            versionNameSuffix "-bazaar"
+
+            // تنظیمات بازار
+            def marketApplicationId = "com.farsitel.bazaar"
+            def marketBindAddress = "ir.cafebazaar.pardakht.InAppBillingService.BIND"
+            manifestPlaceholders = [
+                    marketApplicationId: "${marketApplicationId}",
+                    marketBindAddress: "${marketBindAddress}",
+                    marketPermission: "com.farsitel.bazaar.permission.PAY_THROUGH_BAZAAR"
+            ]
+            buildConfigField "String", "IAB_PUBLIC_KEY", "\"MIHNMA0GCSqGSIb3DQEBAQUAA4G7ADCBtwKBrwDOcMMQiGkupV074OAqqG8KSWzI0Uash8mqgEVJ5PxTROeI5J7xp0KVsqNDrMC1RJEJDfSxy/OMIrc/o695VgRZ1+ZnVX9zjPjASpQO10szQXLvwyOMR3dog0j9WmNMtHwglM59v4cDbAAU3+P+YtSWv5id9tYRNlALyvWaJmt0cR7623E4V6tMxz4VYHffuNd/BZPNFUQG0AeUNsEWELqPhBQEeQSDCNmWlLErdV8CAwEAAQ==\""
+            buildConfigField "String", "STORE_NAME", "\"bazaar\""
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "boolean", "ENABLE_DEBUG_LOGS", "false"
+        }
+        debug {
+            buildConfigField "boolean", "ENABLE_DEBUG_LOGS", "true"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}
+
+dependencies {
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+
+    //new added
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.15.1'
+    implementation 'androidx.recyclerview:recyclerview:1.3.0'
+    // Retrofit برای درخواست شبکه
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.11.0'
+    //adivery
+    implementation 'com.adivery:sdk:4.8.3'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.5.10'
+
+
+}
+
+// وابستگی‌های خاص هر flavor
+dependencies {
+    myketImplementation 'com.github.myketstore:myket-billing-client:1.6'
+    bazaarImplementation "com.github.cafebazaar.Poolakey:poolakey:2.2.0"
+}
