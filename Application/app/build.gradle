@@ -56,7 +56,7 @@ android {
                     marketBindAddress: "${marketBindAddress}",
                     marketPermission: "com.farsitel.bazaar.permission.PAY_THROUGH_BAZAAR"
             ]
-            buildConfigField "String", "IAB_PUBLIC_KEY", "\"MIHNMA0GCSqGSIb3DQEBAQUAA4G7ADCBtwKBrwDOcMMQiGkupV074OAqqG8KSWzI0Uash8mqgEVJ5PxTROeI5J7xp0KVsqNDrMC1RJEJDfSxy/OMIrc/o695VgRZ1+ZnVX9zjPjASpQO10szQXLvwyOMR3dog0j9WmNMtHwglM59v4cDbAAU3+P+YtSWv5id9tYRNlALyvWaJmt0cR7623E4V6tMxz4VYHffuNd/BZPNFUQG0AeUNsEWELqPhBQEeQSDCNmWlLErdV8CAwEAAQ==\""
+            buildConfigField "String", "IAB_PUBLIC_KEY", "\"MIHNMA0GCSqGSIb3DQEBAQUAA4G7ADCBtwKBrwCXk4/Tj1hskxaqRN2Qs+KiJl53NfaCzN4mQ8kvKHcyK2g4TUfaffNDEg8B0KU5lETBD+VVKecTZviUZJ112BKlwfrkM0BUG0fT/3ls0q9zdRVNlHGX+ABCVCOi+GtRcaMAGZ1kAGxEJH9XXDJ4KumErAqv4YdS4z6+JUKkSagECOlfTXB1FTZ9pfBbnb2E+W+O1pZN3bUvPrxu0OSptuzzS5MxsZqM33WXGI4GEsMCAwEAAQ==\""
             buildConfigField "String", "STORE_NAME", "\"bazaar\""
         }
     }

@@ -155,7 +155,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:fontFamily="@font/yekan"
-                            android:text="📺 مجموعه‌های کودکانه"
+                            android:text="📺 مجموعه‌های انیمه"
                             android:textColor="#2D1B4E"
                             android:textSize="18sp"
                             android:textStyle="bold" />

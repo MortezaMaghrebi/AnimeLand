@@ -521,7 +521,7 @@ public class MainActivity extends AppCompatActivity {
                     "0",
                     item.getDuration(),
                     item.getThumbnailUrl(),
-                    currentPlaylist != null ? currentPlaylist.getName() : "کانال کودک",
+                    currentPlaylist != null ? currentPlaylist.getName() : "کانال انیمه",
                     "0",
                     "0"
             );
