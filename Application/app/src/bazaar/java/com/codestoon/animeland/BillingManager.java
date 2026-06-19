@@ -180,7 +180,7 @@ public class BillingManager {
 
 
     public boolean isPremiumActivated() {
-        return true;// prefs.getBoolean("premium_activated", false);
+        return prefs.getBoolean("premium_activated", false);
     }
 
     public boolean isReady() {

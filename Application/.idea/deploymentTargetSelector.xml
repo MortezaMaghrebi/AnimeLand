@@ -4,10 +4,10 @@
     <selectionStates>
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2026-06-19T17:13:01.831019500Z">
+        <DropdownSelection timestamp="2026-06-19T18:47:22.026786200Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\Morteza\.android\avd\MYKET.avd" />
+              <DeviceId pluginId="PhysicalDevice" identifier="serial=de345f1c" />
             </handle>
           </Target>
         </DropdownSelection>

@@ -14,8 +14,8 @@ android {
         applicationId "com.codestoon.animeland"
         minSdk 24
         targetSdk 36
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
 
        // testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -39,7 +39,7 @@ android {
                     marketBindAddress: "${marketBindAddress}",
                     marketPermission: "${marketApplicationId}.BILLING"
             ]
-            buildConfigField "String", "IAB_PUBLIC_KEY", "\"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC4McqwW6NWeczr0rf1B3IhWBT0fiDVN9T6RKGuyYJNOVzd2Sq6oJZPf8fz33mkYaAQ0W2fLl3SJeJBY5YLaT2EX/JINtm1FlpZGtjDcy9umbbYCF6+/XV8/PWgkCQBJF5UC5/xqyuV10q3Gmxvopax4pX+yCmHPGVbK4nvTWVaQwIDAQAB\""
+            buildConfigField "String", "IAB_PUBLIC_KEY", "\"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDHDIjgneShsyT9KLmY8uhGzxGQCm9RhxlwMU9b7GEld2XcsikTdxjkFD+Y6VGXAKFtP4WD1RbXamCkf1+Y+ppeZ806ky+Kxkf5wPpkP5VnxtIHAUt4hXW2kAjVgybKolFjX1xouEVZ+1zDr+rJj7YxPlkINJaKpLHEg5wpftViLQIDAQAB\""
             buildConfigField "String", "STORE_NAME", "\"myket\""
         }
 
